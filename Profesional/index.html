@@ -9,12 +9,13 @@
 </head>
 <body>
     <main>
-        <form method=" " action=" ">
-            <fieldset>
+        <h1 style="color: teal;">Introduce un nuevo profesional</h1>
+        <form method=" " action=" " style="width: 40%; border-color: white;">
+            <fieldset >
                 <label for="inputExample"> Nombre</label>
                 <input type="text"name="inputName" id="nombre" >
             </fieldset>
-            <fieldset>
+            <fieldset >
                 <label for="inputExample"> Edad</label>
                 <input type="text"name="inputEdad" id="edad" >
             </fieldset>
@@ -24,11 +25,11 @@
             </fieldset>
             <fieldset>
                 <label for="inputExample"> Esta Retirado</label>
-                <input type="text"name="inputRetired" id="isRetired" >
+                <input type="text"name="inputRetired" id="retirado" >
             </fieldset>
             <fieldset>
                 <label for="inputExample"> Nacionaliad</label>
-                <input type="text"name="inputNacionalidad" id="nacionaliad" >
+                <input type="text"name="inputNacionalidad" id="nacionalidad" >
             </fieldset>
             <fieldset>
                 <label for="inputExample"> Numero de Oscars</label>
@@ -41,8 +42,49 @@
             <fieldset>
                 <label for="inputExample"> id</label>
                 <input type="text"name="inputId" id="id" >
-            </fieldset>
-        </form>
+            </fieldset> 
+            </form>
+            <button type="button" onclick="postProfesional()">Crear</button>
+            <button type="button" onclick="putProfesional()">Modificar</button>
+            <button type="button" onclick="deleteProfesional()">Borrar</button>
+        <h1 style="color: teal;">Mostrar profesional</h1>
+        <form method=" " action=" " style="width: 40%; border-color: white;">
+                <fieldset>
+                    <label for="inputExample"> id</label>
+                    <input type="text"name="inputId" id="Mid" >
+                </fieldset> 
+                <fieldset >
+                    <label for="inputExample"> Nombre</label>
+                    <input type="text"name="inputName" id="mostrarNombre">
+                </fieldset>
+                <fieldset >
+                    <label for="inputExample"> Edad</label>
+                    <input type="text"name="inputEdad" id="mostrarEdad" >
+                </fieldset>
+                <fieldset>
+                    <label for="inputExample"> Genero</label>
+                    <input type="text"name="inputGenero" id="mostrarGenero" >
+                </fieldset>
+                <fieldset>
+                    <label for="inputExample"> Esta Retirado</label>
+                    <input type="text"name="inputRetired" id="mostrarRetirado" >
+                </fieldset>
+                <fieldset>
+                    <label for="inputExample"> Nacionaliad</label>
+                    <input type="text"name="inputNacionalidad" id="mostrarNacionalidad" >
+                </fieldset>
+                <fieldset>
+                    <label for="inputExample"> Numero de Oscars</label>
+                    <input type="text"name="inputOscars" id="mostrarNoscars" >
+                </fieldset>
+                <fieldset>
+                    <label for="inputExample"> Profesion</label>
+                    <input type="text"name="inputProfesion" id="mostrarProfesion" >
+                </fieldset>
+                </form>
+             <button type="button" onclick="getProfesional()">Mostrar</button>
+             
     </main>
+    
 </body>
 </html>
