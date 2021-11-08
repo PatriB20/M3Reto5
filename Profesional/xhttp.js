@@ -83,13 +83,13 @@ fetch(url,param)
         return data.json
     })
     .then(function(result){
-        result=(profesionales[id].nombre=document.getElementById("nombre").value,
-        profesionales[id].edad=document.getElementById("edad").value,
-        profesionales[id].genero= document.getElementById("genero").value,
-        profesionales[id].estaRetirado=document.getElementById("retirado").value,
-        profesionales[id].nacionalidad=document.getElementById("nacionalidad").value,
-        profesionales[id].nOscars=document.getElementById("oscars").value,
-        profesionales[id].profesion=document.getElementById("profesion").value)
+        result=(profesionales[id].name=document.getElementById("nombre").value,
+        profesionales[id].age=document.getElementById("edad").value,
+        profesionales[id].gnere= document.getElementById("genero").value,
+        profesionales[id].isRetired=document.getElementById("retirado").value,
+        profesionales[id].nacionality=document.getElementById("nacionalidad").value,
+        profesionales[id].oscarsNumber=document.getElementById("oscars").value,
+        profesionales[id].profession=document.getElementById("profesion").value)
         return result
     })
     .catch (function(error){
@@ -118,25 +118,25 @@ function deleteProfesional(){
          console.log(error)
         })
 }
-function getProfesionales(){
+// function getProfesionales(){
     
-    let url="http://127.0.0.1:3000/profesionales"
+//     let url="http://127.0.0.1:3000/profesionales"
     
-    let param ={
-        headers:{"Content-type": "application/json; charset= UTF-8"},
-        method:"GET"
-    }
-    fetch(url,param)
-    .then(function(data){
-        return data.json()
-    })
-    .then(function(result)
-    {
-    document.getElementById("profesionales").value= result.profesionales
+//     let param ={
+//         headers:{"Content-type": "application/json; charset= UTF-8"},
+//         method:"GET"
+//     }
+//     fetch(url,param)
+//     .then(function(data){
+//         return data.json()
+//     })
+//     .then(function(result)
+//     {
+//     document.getElementById("profesionales").value= result.profesionales
    
-    })
+//     })
 
-    .catch (function(error){
-        console.log(error)
-    })
-}
+//     .catch (function(error){
+//         console.log(error)
+//     })
+// }
