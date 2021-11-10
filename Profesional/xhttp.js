@@ -70,27 +70,27 @@ function getProfesional(){
 }
 
 function putProfesional(){
-    let id= document.getElementById("id").value;
+  
+    let profesional =new Profesional(
+        document.getElementById("nombre").value,
+         document.getElementById("edad").value,
+         document.getElementById("genero").value,
+         document.getElementById("retirado").value,
+         document.getElementById("nacionalidad").value,
+         document.getElementById("oscars").value,
+         document.getElementById("profesion").value,
+         document.getElementById("id").value )
     
 const url="http://127.0.0.1:3000/profesionales"
 let param ={
 headers:{"Content-type": "application/json; charset= UTF-8"},
-body: JSON.stringify(profesionales),
+body: JSON.stringify(profesional),
 method:"PUT"}
 
 fetch(url,param)
-    .then(function(data){
-        return data.json
-    })
+   
     .then(function(result){
-        result=(profesionales[id].name=document.getElementById("nombre").value,
-        profesionales[id].age=document.getElementById("edad").value,
-        profesionales[id].gnere= document.getElementById("genero").value,
-        profesionales[id].isRetired=document.getElementById("retirado").value,
-        profesionales[id].nacionality=document.getElementById("nacionalidad").value,
-        profesionales[id].oscarsNumber=document.getElementById("oscars").value,
-        profesionales[id].profession=document.getElementById("profesion").value)
-        return result
+        console.log(result)
     })
     .catch (function(error){
     console.log(error)
@@ -100,10 +100,12 @@ fetch(url,param)
 function deleteProfesional(){
     let id= document.getElementById("id").value;
     const url="http://localhost:3000/profesionles"
-    
+    let paramid={
+        id:id
+    }
     let param ={
         headers:{"Content-type": "application/json; charset= UTF-8"},
-        body: JSON.stringify(profesional),
+        body: JSON.stringify(paramid),
         method:"DELETE"}
         
        
@@ -118,25 +120,33 @@ function deleteProfesional(){
          console.log(error)
         })
 }
-// function getProfesionales(){
+function getProfesionales(){
     
-//     let url="http://127.0.0.1:3000/profesionales"
+    let url="http://127.0.0.1:3000/profesionales"
     
-//     let param ={
-//         headers:{"Content-type": "application/json; charset= UTF-8"},
-//         method:"GET"
-//     }
-//     fetch(url,param)
-//     .then(function(data){
-//         return data.json()
-//     })
-//     .then(function(result)
-//     {
-//     document.getElementById("profesionales").value= result.profesionales
-   
-//     })
+    let param ={
+        headers:{"Content-type": "application/json; charset= UTF-8"},
+        method:"GET"
+    }
+    fetch(url,param)
+    .then(function(data){
+        return data.json()
+    })
+    .then(function(result)
+    {
+    for (let i=0; i< result.length;i++){
+    document.getElementById("profesionales").innerHTML+= result[i].name + " ";
+    document.getElementById("profesionales").innerHTML+= result[i].age + " ";
+    document.getElementById("profesionales").innerHTML+= result[i].gnere + " ";
+    document.getElementById("profesionales").innerHTML+= result[i].nacionality + " ";
+    document.getElementById("profesionales").innerHTML+= result[i].isRetired + " ";
+    document.getElementById("profesionales").innerHTML+= result[i].oscarsNumber + " ";
+    document.getElementById("profesionales").innerHTML+= result[i].profession + " ";
+    
+    }
+    })
 
-//     .catch (function(error){
-//         console.log(error)
-//     })
-// }
+    .catch (function(error){
+        console.log(error)
+    })
+}
